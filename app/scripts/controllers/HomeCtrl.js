@@ -1,8 +1,8 @@
 (function(){
-  function HomeCtrl() {
-
+  function HomeCtrl($scope, Room) {
+    $scope.rooms = Room;
   }
   angular
     .module('blocChat')
-    .controller('HomeCtrl', [HomeCtrl]);
+    .controller('HomeCtrl', ['$scope','Room', HomeCtrl]);
 })();
