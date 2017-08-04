@@ -1,8 +1,15 @@
 (function(){
-  function HomeCtrl($scope, Room) {
+  function HomeCtrl($uibModal, $scope, Room) {
     $scope.rooms = Room;
+    this.open = function(){
+      var modalInstance = $uibModal.open({
+        templateUrl: '/templates/modal.html',
+        size: 'sm',
+        controller: 'ModalCtrl'
+      });
+    };
   }
   angular
     .module('blocChat')
-    .controller('HomeCtrl', ['$scope','Room', HomeCtrl]);
+    .controller('HomeCtrl', ['$uibModal','$scope','Room', HomeCtrl]);
 })();
