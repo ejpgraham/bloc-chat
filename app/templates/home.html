@@ -1,6 +1,22 @@
-<h1>Home Page</h1>
-<button ng-click="home.open()">New Chatroom</button>
 
-<div class="" ng-repeat="room in rooms">
-  {{room}}
+  <div class="chat-room-sidebar" >
+    <h1 class="sidebar-title">Bloc Chat</h1>
+    <button ng-click="home.openModal()">New Chatroom</button>
+
+    <div class="chat-room-list" ng-repeat="room in rooms">
+      <div class="chat-room-name" ng-click="home.openChatRoom(room)">
+        {{room.$value}}
+
+      </div>
+    </div>
+  </div>
+
+
+
+<div class="current-chat-room">
+  <h3>{{activeRoom.$value}}</h3>
+  <div class="current-chat-room-message" ng-repeat="message in activeRoom.messages">
+    {{message.username}} : {{message.content}}
+
+  </div>
 </div>

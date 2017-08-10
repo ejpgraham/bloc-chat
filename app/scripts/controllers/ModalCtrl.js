@@ -5,7 +5,6 @@
     };
     $scope.newRoom = function(){
        $uibModalInstance.close();
-       debugger;
        Room.add({
          $value: $scope.room.name
        });
