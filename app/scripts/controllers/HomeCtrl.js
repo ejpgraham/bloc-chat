@@ -4,7 +4,7 @@
     $scope.activeRoom = null;
     this.openModal = function(){
       var modalInstance = $uibModal.open({
-        templateUrl: '/templates/modal.html',
+        templateUrl: '/templates/newchatroom.html',
         size: 'sm',
         controller: 'ModalCtrl'
       });

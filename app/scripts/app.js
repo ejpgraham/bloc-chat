@@ -1,5 +1,4 @@
 (function() {
-
   function config($locationProvider, $stateProvider) {
     $locationProvider
         .html5Mode({
@@ -13,13 +12,8 @@
             controller: 'HomeCtrl as home',
             templateUrl: '/templates/home.html'
         });
-        // .state('modal', {
-        //   url: '/modal',
-        //   controller: 'ModalCtrl as modal',
-        //   templateUrl: '/templates/modal.html'
-        // });
 }
     angular
-        .module('blocChat', ['ui.bootstrap','ui.router','firebase'])
+        .module('blocChat', ['ngCookies','ui.bootstrap','ui.router','firebase'])
         .config(config);
 })();

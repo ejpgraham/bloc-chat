@@ -1,5 +1,5 @@
 (function(){
-  function ModalCtrl(Room, $scope, $uibModalInstance){
+  function ModalCtrl(Room, $cookies, $scope, $uibModalInstance){
     $scope.cancel = function(){
       $uibModalInstance.dismiss();
     };
@@ -9,9 +9,13 @@
          $value: $scope.room.name
        });
     };
+    $scope.enterUsername = function(){
+      $uibModalInstance.close();
+      $cookies.put('blocChatCurrentUser', $scope.user.username);
+    };
 
   }
   angular
     .module('blocChat')
-    .controller('ModalCtrl', ['Room','$scope', '$uibModalInstance', ModalCtrl]);
+    .controller('ModalCtrl', ['Room', '$cookies','$scope', '$uibModalInstance', ModalCtrl]);
 })();
