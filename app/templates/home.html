@@ -1,22 +1,26 @@
 
   <div class="chat-room-sidebar" >
-    <h1 class="sidebar-title">Bloc Chat</h1>
-    <button ng-click="home.openModal()">New Chatroom</button>
-
-    <div class="chat-room-list" ng-repeat="room in rooms">
-      <div class="chat-room-name" ng-click="home.openChatRoom(room)">
-        {{room.$value}}
-
-      </div>
+    <div class="chat-room-sidebar-header">
+        <h1 class="sidebar-title">Old School Chat</h1>
+        <button class="new-chatroom-button" ng-click="home.openModal()">New Chatroom</button>
+    </div>
+    <div class="chat-room-sidebar-body">
+      <h2 class="chat-room-list-title">Available Chatrooms</h2>
+        <ul class="chat-room-list">
+          <li class="chat-room-list-item" ng-repeat="room in rooms" ng-click="home.openChatRoom(room)">
+         {{room.$value}}
+          </li>
+    </ul>
     </div>
   </div>
 
 
 
 <div class="current-chat-room">
-  <h3>{{activeRoom.$value}}</h3>
-  <div class="current-chat-room-message" ng-repeat="message in activeRoom.messages">
-    {{message.username}} : {{message.content}}
-
-  </div>
+  <h3 class="current-chat-room-title">{{activeRoom.$value}}</h3>
+  <ul class="current-chat-room-message-list" ng-repeat="message in activeRoom.messages | orderBy : sentAt">
+    <li class="current-chat-room-message-item" >{{message.username}} : {{message.content}} </li>
+  </ul>
+  <input class="chat-message-input" type="text" ng-model="newMessage">
+  <button class="send-message-button"type="button" name="button" ng-click="home.sendMessage(newMessage)">Send Message</button>
 </div>

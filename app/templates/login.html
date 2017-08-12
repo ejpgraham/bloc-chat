@@ -1,10 +1,8 @@
 <div class="bloc-chat-modal">
   <form name="usernameForm">
-
-
-    <h3>Login!</h3>
-    <label>Enter your username:</label>
-    <input type="text" name="usernameInput"  ng-model="user.username" ng-minlength="1" ng-maxlength="10" required>
-    <button type="button" ng-click="enterUsername()" ng-disabled="usernameForm.usernameInput.$invalid">Start Chatting!</button>
+    <h3 class="modal-title">Login!</h3>
+    <label class="modal-label">Enter your username:</label>
+    <input class="modal-input" type="text" name="usernameInput"  ng-model="user.username" ng-minlength="1" ng-maxlength="10" required>
+    <button class="modal-button" type="button" ng-click="enterUsername()" ng-disabled="usernameForm.usernameInput.$invalid">Start Chatting!</button>
   </form>
 </div>
