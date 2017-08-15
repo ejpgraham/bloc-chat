@@ -1,7 +1,8 @@
 <div class="bloc-chat-modal">
-  <h3>Create a new chatroom!</h3>
-  <label>Name your chatroom:</label>
-  <input type="text" name="name" ng-model="room.name" required>
-  <button type="button" ng-click="newRoom()">OK</button>
-  <button type="button" ng-click="cancel()">Cancel</button>
+  <h3 class="modal-title">Create a new chatroom!</h3>
+  <label class="modal-label">Name your chatroom:</label>
+  <input name="chatroomEntry"  class="modal-input" type="text" ng-minlength="1" ng-maxlength="18"  ng-model="room.name" required>
+  <br>
+  <button class="modal-button" type="button" ng-disabled="chatroomEntry.$invalid" ng-click="newRoom()">OK</button>
+  <button class="modal-button" type="button" ng-click="cancel()">Cancel</button>
 </div>
